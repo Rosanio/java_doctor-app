@@ -1,0 +1,8 @@
+<h3>$doctor.getName()</h3>
+<h4>Specialty is: $doctor.getSpecialty()</h4>
+
+<p>Patients assigned to this doctor:</p>
+#foreach($patient in $patients)
+  <p>$patient.getName()</p>
+
+#end

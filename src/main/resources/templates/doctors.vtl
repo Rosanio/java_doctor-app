@@ -1,0 +1,7 @@
+<h1>All Available Doctors:</h1>
+
+#foreach($doctor in $doctors)
+<h3><a href="/doctors/$doctor.getId()">$doctor.getName()</a></h3>
+#end
+
+<a href="/" class="btn btn-primary">Go Home</a>
