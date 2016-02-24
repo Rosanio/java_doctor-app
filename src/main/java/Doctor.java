@@ -24,7 +24,7 @@ public class Doctor {
   }
 
   public static List<Doctor> all() {
-    String sql = "SELECT * FROM doctors";
+    String sql = "SELECT * FROM doctors ORDER BY name ASC";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Doctor.class);
     }
@@ -83,6 +83,13 @@ public class Doctor {
       con.createQuery(sql).addParameter("id", id ).executeUpdate();
     }
   }
+
+  // public int countPatients() {
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT COUNT(doctor_id) FROM patients WHERE doctor_id = :id";
+  //     return con.createQuery(sql).addParameter("id", id).executeAndFetchFirst(int.class);
+  //   }
+  // }
 
 
 }

@@ -24,6 +24,7 @@ public class App {
       String specialty = request.queryParams("specialty");
       Doctor newDoctor = new Doctor(doctorName, specialty);
       newDoctor.save();
+      // Doctor.order();
       model.put("doctors", Doctor.all());
       model.put("template", "templates/doctors.vtl");
       return new ModelAndView(model, layout);
