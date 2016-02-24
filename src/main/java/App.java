@@ -58,5 +58,12 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/patients", (request, response) -> {
+      HashMap<String, Object>model= new HashMap<String, Object>();
+      model.put("patients", Patient.all());
+      model.put("template", "templates/patients.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }
